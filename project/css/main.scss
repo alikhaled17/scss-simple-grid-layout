@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// more css style to display a nice grid concept  
+.nav { background-color: #3b6978;}
+.aside {
+    background-color: #75a5af;;
+    min-height: 200px;
+}
+.content {
+    background-color: #84a9ac;
+    min-height: 200px;
+}
+.imgs {
+  border: 10px solid #84a9ac !important;
+  background-color: #3b6978;
+  min-height: 75%;
+}
+.footer { background-color: #204051;}
+
+%style{ 
+    color:#fff;
+    text-align: center;
+    height: 50px;
+  
+    line-height: 40px;
+    border: 5px solid #fff;
+}
+
+// simple grid layout start from here :
+@for $i from 1 through 12 { 
+    .col-#{$i} {
+        float: left; 
+        width: (100% / 12) * $i; 
+        @extend %style;
+    }
+}
